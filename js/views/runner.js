@@ -58,7 +58,9 @@
       var ok = E.isCorrect(cur, chosen);
       var o = CCAR.objectiveById(cur.obj);
       return '<div class="explain" role="status"><b class="' + (ok ? 'good-t' : 'bad-t') + '">' + (ok ? '✅ Correct' : '✖ Incorrect') + '</b> <span class="small muted">· ' + cur.obj + ' ' + esc(o ? o.t : '') + '</span>' +
-        '<p>' + cur.explanation + '</p><p class="small"><b>Trap tested:</b> ' + esc(cur.trap || '') + '</p>' + lessonLink(cur.obj) + '</div>';
+        '<p>' + cur.explanation + '</p>' +
+        (cur.signals ? '<p class="small"><b>Reading the scenario:</b> ' + cur.signals + '</p>' : '') +
+        '<p class="small"><b>Trap tested:</b> ' + esc(cur.trap || '') + '</p>' + lessonLink(cur.obj) + '</div>';
     }
     function lessonLink(obj) { var l = CCAR.lessonForObj(obj); return l ? '<p class="small">Review: <a href="#/lesson/' + l.id + '" target="_self">' + esc(l.title) + '</a></p>' : ''; }
 

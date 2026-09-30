@@ -53,7 +53,9 @@
               return '<li><div class="opt' + (right ? ' correct' : sel ? ' wrong' : '') + '" style="cursor:default"><span class="letter">' + LETTERS[pos] + '.</span><span>' + q.options[orig] +
                 (sel ? ' <span class="pill">your answer</span>' : '') + '<div class="why">' + (right ? '✅ ' : '✖ ') + q.rationales[orig] + '</div></span></div></li>';
             }).join('') + '</ul>' +
-            '<div class="explain"><b>Why:</b> ' + q.explanation + '<p class="small"><b>Trap:</b> ' + esc(q.trap || '') + ' · <b>Objective:</b> ' + esc(o ? o.t : q.obj) + '</p></div></div>';
+            '<div class="explain"><b>Why:</b> ' + q.explanation +
+            (q.signals ? '<p class="small"><b>Reading the scenario:</b> ' + q.signals + '</p>' : '') +
+            '<p class="small"><b>Trap:</b> ' + esc(q.trap || '') + ' · <b>Objective:</b> ' + esc(o ? o.t : q.obj) + '</p></div></div>';
         }).join('');
     }
 

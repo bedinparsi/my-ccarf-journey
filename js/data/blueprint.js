@@ -84,13 +84,16 @@ CCAR.OBJECTIVES = [
 
 CCAR.WEAK_THRESHOLD = 70; // objectives below this on the last report are "weak"
 
-/* Five exam forms. Each draws 4 of the 6 scenarios, 15 items per scenario, 60 items total, 120 minutes. */
+/* Six exam forms. Each draws 4 of the 6 scenarios, 15 items per scenario, 60 items total, 120 minutes.
+   exam6 is the long-scenario simulation: exam-length stems (minStemWords = prose words outside <pre>),
+   and every item carries `signals` (what to notice vs what is noise) shown with the explanation. */
 CCAR.EXAM_FORMS = [
   { id: 'exam1', title: 'Practice Exam 1', scenarios: ['S1', 'S3', 'S5', 'S6'], focus: 'Orchestration patterns, subagent wiring, truncation, human review routing' },
   { id: 'exam2', title: 'Practice Exam 2', scenarios: ['S2', 'S3', 'S4', 'S6'], focus: 'Config mechanism selection, state persistence, synthesis uncertainty, extraction accuracy' },
   { id: 'exam3', title: 'Practice Exam 3', scenarios: ['S1', 'S2', 'S3', 'S5'], focus: 'Plan mode vs direct vs multi-phase, CI review configuration, delegation style' },
   { id: 'exam4', title: 'Practice Exam 4', scenarios: ['S3', 'S4', 'S5', 'S6'], focus: 'Misconfigured spawning, output schemas, inclusion/exclusion criteria, batch vs sync' },
-  { id: 'exam5', title: 'Practice Exam 5', scenarios: ['S1', 'S2', 'S4', 'S6'], focus: 'Mixed hard review: tool distribution, codebase exploration, routing, persistence' }
+  { id: 'exam5', title: 'Practice Exam 5', scenarios: ['S1', 'S2', 'S4', 'S6'], focus: 'Mixed hard review: tool distribution, codebase exploration, routing, persistence' },
+  { id: 'exam6', title: 'Practice Exam 6', scenarios: ['S2', 'S3', 'S5', 'S6'], focus: 'Long-scenario simulation: exam-length stems with logs, configs and distracting detail, all 30 task statements, heavy on your 0% objectives', minStemWords: 120 }
 ];
 
 CCAR.exams = CCAR.exams || {};
