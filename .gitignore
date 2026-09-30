@@ -141,3 +141,10 @@ dist
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
 .vite/
+
+# --- CCAR-F workspace ---
+# Personal exam score report (contains candidate ID and registration number).
+# Kept local only because this repository is public.
+docs/past-exam-result/
+# Vercel CLI project link (created by `vercel link`)
+.vercel

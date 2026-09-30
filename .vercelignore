@@ -1,0 +1,6 @@
+# Allowlist: upload only the static app to Vercel.
+# docs/, handoffs/, tools/ and .kiro/ are authoring material and are not served.
+/*
+!index.html
+!css
+!js
